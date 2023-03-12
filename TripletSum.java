@@ -1,0 +1,33 @@
+	package Arrays;
+
+public class TripletSum {
+
+	public static int tripletSum(int [] arr, int x) {
+		int paircount=0;
+		int n=arr.length;
+		
+		for(int i = 0; i < n - 2; i++) {
+			for(int j = i + 1; j < n - 1; j++) {
+				for(int k = j + 1; k < n; k++) {
+					if( (arr[i] + arr[j] + arr[k]) == x ) {
+						paircount++;
+					}
+				}
+			}
+		}
+		
+		return paircount;
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		int [] arr = {1,1,2,5,6,8,7,3,0};
+		int x=10;
+		
+		int result_triplet_sum = tripletSum(arr,x);
+		System.out.println(result_triplet_sum);
+
+	}
+
+}
